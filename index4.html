@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p>Hello World</p>
+    <input type="file" multiple onchange="upFiles(this.files)" name="" id="">
+    <div id="message"></div>
+</body>
+
+<script>
+    var message = document.getElementById("message");
+    if (window.FileReader) {
+        message.innerHTML = "File Reader is available"
+    } else {
+        message.innerHTML = "File Reader Don't Exist Here"
+    }
+
+    function upFiles(files) {
+        for (let x = 0; x < files.length; x++) {
+            var fReader = new FileReader();
+            fReader.onload = function (e) {
+                console.log(e.target.result);
+                console.log(e.target);
+            }
+            fReader.readAsText(files[x]);
+            //console.log(fReader);
+            message.innerHTML += "<br>" + files[x].name;
+            //console.dir(files[x]);
+        }
+    }
+
+    window.onload = init;
+    function init(data) {
+        navigator.geolocation.getCurrentPosition(console.dir(data));
+    }
+</script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+</head>
+
+<body>
+    <input type="button" value="Start" onclick="test()" style="background-color:rgba(216, 51, 51, 0.938); border-radius:15px; padding:20px">
+    <h3 id="name">Zied</h3>
+    <h3 id="state">False</h3>
+
+    <h1 id="GameName">Click Table</h1>
+    <div class="boxs">
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+    </div>
+    <script>
+        var boxs = document.getElementsByClassName("box");
+        var hiddens1 = ["alain", "mark", "tom", "ronaldo", "messi", "harry", "potter", "bouda"];
+        var hiddens2 = [];
+        var state=document.getElementById("state");
+
+        function test() {
+            console.log(boxs.id);
+            for (let i = 0; i < boxs.length; i++) {
+                boxs[i].innerHTML = "hidden" + String(i);
+                console.log(boxs[i].id);
+            }
+        }
+
+        function randomise() {
+            x = Math.floor(Math.random() * 7);
+            for (let i = 0; i < x; i++) {
+                hiddens2[i] = hiddens1[i];
+            }
+            hiddens2[x] = "zied";
+            for (let i = x + 1; i < hiddens1.length; i++) {
+                hiddens2[i] = hiddens1[i];
+            }
+            console.log(hiddens2);
+        }
+
+        function test2() {
+            for (let i = 0; i < boxs.length; i++) {
+                boxs[i].addEventListener("mouseover", function () {
+                    boxs[i].innerHTML = hiddens2[i];
+
+                    console.log(boxs[i].id);
+                })
+            }
+        }
+
+        function test3() {
+            for (let i = 0; i < boxs.length; i++) {
+                boxs[i].addEventListener("mouseleave", function () {
+                    test();
+                    if (boxs[i].innerHTML=="zied") {
+                        state.innerHTML="Correct";
+                    } else {
+                        boxs[i].parentElement.removeChild(boxs[i]);
+
+                    }
+                })
+            }
+        }
+
+        
+        randomise();
+        test2();
+        test3();
+    </script>
+</body>
+
+</html>

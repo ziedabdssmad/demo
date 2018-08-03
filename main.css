@@ -1,0 +1,65 @@
+/* Container needed to position the button. Adjust the width as needed 
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image responsive 
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  .card{
+      border-radius: 10%
+  }
+  /* Style the button and place it in the middle of the container/image 
+  .container .btn-light {
+    position: absolute;
+    top:20px;
+    left: 16px;
+    /*transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);*/
+    /*background-color: rgba(167, 154, 154, 0.808);
+    color: white;
+    
+    font-size: 20px;
+    border: none;
+    /*cursor: pointer;
+    border-radius: 35px;
+  }
+.cover{
+    position: absolute;
+    top: 280px;
+    left: 15px;
+    max-height: 150px;
+    max-width: 150px;
+    border-radius: 12px;
+}
+  .container .btn-primary {
+    position: absolute;
+     top:280px;
+    right: 12px;
+    /*transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);*/
+    /*background-color: rgba(167, 154, 154, 0.808);
+    color: white;
+    font-size: 20px;
+    border: none;
+    /*cursor: pointer;
+    border-radius: 35px;
+  }
+  
+.clock{
+    display: inline-block;
+    position: absolute;
+    padding-top: 20px;
+    left: 190px;
+}
+
+*/
+.box{
+  display: inline-block;
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
